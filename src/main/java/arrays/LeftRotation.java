@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 /**
  * @author : Alexander Serebriyan
+ *
+ * neat solution:
+ *
+ * for(int i = 0; i < lengthOfArray; i++){
+ * int newLocation = (i + (lengthOfArray - shiftAmount)) % lengthOfArray;
+ * a[newLocation] = in.nextInt();
+}
  */
 public class LeftRotation {
 
