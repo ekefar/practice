@@ -12,8 +12,6 @@ import java.util.Stack;
  */
 public class LongestUnivaluePath {
 
-    static int longestPath = 0;
-
     public static void main(String[] args) {
         final TreeNode root = new TreeNode(4);
         final TreeNode right = new TreeNode(5);
@@ -30,17 +28,18 @@ public class LongestUnivaluePath {
     }
 
     public static int longestUnivaluePath(TreeNode root) {
-        pathLength(root);
-        return longestPath;
+        final int[] longestPath = {0};
+        pathLength(root, longestPath);
+        return longestPath[0];
     }
 
-    public static int pathLength(TreeNode root) {
+    public static int pathLength(TreeNode root, int[] longestPath) {
         if (root == null) {
             return 0;
         }
 
-        int leftLength = pathLength(root.left);
-        int rightLength = pathLength(root.right);
+        int leftLength = pathLength(root.left, longestPath);
+        int rightLength = pathLength(root.right, longestPath);
         int left = 0;
         int right = 0;
         if (root.left != null && root.left.val == root.val) {
@@ -50,7 +49,7 @@ public class LongestUnivaluePath {
             right = rightLength + 1;
         }
 
-        longestPath = Math.max(longestPath, left+right);
+        longestPath[0] = Math.max(longestPath[0], left+right);
 
         return Math.max(left, right);
 
