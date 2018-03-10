@@ -1,4 +1,4 @@
-package general;
+package design;
 
 /**
  * @author : Alexander Serebriyan
