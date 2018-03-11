@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 /**
  * @author : Alexander Serebriyan
+ * https://leetcode.com/problems/decode-ways/
  */
 public class DecodeWays {
 
