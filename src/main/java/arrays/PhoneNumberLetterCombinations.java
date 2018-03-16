@@ -13,8 +13,10 @@ public class PhoneNumberLetterCombinations {
 
     public static void main(String[] args) {
 
-        final List<String> strings = letterCombinations("23");
-        System.out.println(strings);
+        final long start = System.currentTimeMillis();
+        final List<String> strings = letterCombinations("265238764544");
+//        System.out.println(strings);
+        System.out.println(System.currentTimeMillis() - start);
     }
 
     public static List<String> letterCombinations(String digits) {
@@ -27,12 +29,14 @@ public class PhoneNumberLetterCombinations {
         List<String> combinations = new LinkedList<>();
         Collections.addAll(combinations, characterHashMap.get(digits.charAt(0)));
 
+
+
+        List<String> newCombinations;
         char[] charArray = digits.toCharArray();
         for (int i = 1; i < charArray.length; i++) {
             char c = charArray[i];
             final String[] letters = characterHashMap.get(c);
-
-            final List<String> newCombinations = new LinkedList<>();
+            newCombinations = new LinkedList<>();
             for (String combination : combinations) {
                 for (String letter : letters) {
                     newCombinations.add(combination + letter);
