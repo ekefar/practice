@@ -32,6 +32,31 @@ public class MakingAnagrams {
         return numberNeeded;
     }
 
+//    another one
+    private static boolean areAnagrams(String first, String second) {
+
+        if(first.length() != second.length() || hash(first) != hash(second)) {
+            return false;
+        }
+
+        char[] firstChars = first.toCharArray();
+        char[] secondChars = second.toCharArray();
+
+        Arrays.sort(firstChars);
+        Arrays.sort(secondChars);
+
+        return new String(firstChars).equals(new String(secondChars));
+    }
+
+    private static int hash(String str) {
+        int hash = 0;
+        for (char c : str.toCharArray()) {
+            hash += c;
+        }
+
+        return hash;
+    }
+
     // smart one
     /*public static int numberNeeded(String first, String second) {
         int[] lettercounts = new int[26];
