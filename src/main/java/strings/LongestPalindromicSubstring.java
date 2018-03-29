@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * @author : Alexander Serebriyan
+ * https://leetcode.com/problems/longest-palindromic-subsequence/
  */
 public class LongestPalindromicSubstring {
 
