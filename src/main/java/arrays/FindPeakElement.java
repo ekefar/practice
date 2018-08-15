@@ -7,7 +7,7 @@ package arrays;
 public class FindPeakElement {
 
     public static void main(String[] args) {
-        System.out.println(findPeakElement(new int[] {1}));
+        System.out.println(findPeakElement(new int[] {1,1,1,1,1,6,1}));
     }
 
     public static int findPeakElement(int[] nums) {
