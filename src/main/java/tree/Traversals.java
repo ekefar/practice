@@ -28,11 +28,12 @@ public class Traversals {
         right.right = rightRight;
         right.left = rightLeft;
 
-        List<Integer> resRecursive = preorderTraversalRecursive(root);
-        List<Integer> res = preorderTraversal(root);
 
-        System.out.println(res);
-        System.out.println(resRecursive);
+
+        System.out.println(preorderTraversalRecursive(root));
+        System.out.println(preorderTraversal(root));
+
+        System.out.println(inorderTraversalRecursive(root));
 
     }
 
@@ -76,6 +77,25 @@ public class Traversals {
         result.add(root.val);
         preorderTraversalRecursive(root.left, result);
         preorderTraversalRecursive(root.right, result);
+    }
+
+    public static List<Integer> inorderTraversalRecursive(TreeNode root) {
+
+        LinkedList<Integer> result = new LinkedList<>();
+        inorderTraversalRecursive(root, result);
+
+        return result;
+    }
+
+    public static void inorderTraversalRecursive(TreeNode root, List<Integer> result) {
+
+        if (root == null) {
+            return;
+        }
+
+        inorderTraversalRecursive(root.left, result);
+        result.add(root.val);
+        inorderTraversalRecursive(root.right, result);
     }
 
 
