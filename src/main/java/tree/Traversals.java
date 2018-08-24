@@ -35,24 +35,26 @@ public class Traversals {
 
         System.out.println(inorderTraversalRecursive(root));
 
+        System.out.println(levelTraversal(root));
+
     }
 
     public static List<Integer> preorderTraversal(TreeNode root) {
 
         LinkedList<Integer> result = new LinkedList<>();
 
-        Stack<TreeNode> queue = new Stack<>();
-        queue.push(root);
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
 
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.pop();
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
             result.add(node.val);
 
             if (node.right != null) {
-                queue.push(node.right);
+                stack.push(node.right);
             }
             if(node.left!=null) {
-                queue.push(node.left);
+                stack.push(node.left);
             }
         }
 
@@ -98,6 +100,27 @@ public class Traversals {
         inorderTraversalRecursive(root.right, result);
     }
 
+    public static List<Integer> levelTraversal(TreeNode root) {
+        LinkedList<Integer> result = new LinkedList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+
+            TreeNode node = queue.pollFirst();
+            result.add(node.val);
+            if(node.left != null) {
+                queue.add(node.left);
+            }
+
+            if(node.right != null) {
+                queue.add(node.right);
+            }
+        }
+
+        return result;
+    }
 
 
 }
