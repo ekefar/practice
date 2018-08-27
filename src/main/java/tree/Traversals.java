@@ -2,7 +2,6 @@ package tree;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Stack;
 
 /**
@@ -11,7 +10,7 @@ import java.util.Stack;
 public class Traversals {
 
     public static void main(String[] args) {
-        TreeNode root = TreeFactory.getSimpleTree();
+        TreeNode root = TreeFactory.createSimpleTree();
 
 
         System.out.println(preorderTraversalRecursive(root));

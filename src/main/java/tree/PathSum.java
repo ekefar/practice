@@ -6,7 +6,7 @@ package tree;
 public class PathSum {
 
     public static void main(String[] args) {
-        TreeNode root = TreeFactory.getSimpleTree();
+        TreeNode root = TreeFactory.createSimpleTree();
 
         System.out.println(hasPathSum(root, 1));
         System.out.println(hasPathSum(root, 3));

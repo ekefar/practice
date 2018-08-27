@@ -7,7 +7,7 @@ public class TreeDepth {
 
 
     public static void main(String[] args) {
-        TreeNode root = TreeFactory.getSimpleTree();
+        TreeNode root = TreeFactory.createSimpleTree();
 
         System.out.println(maxDepth(root));
         System.out.println(maxDepth(root.left));
