@@ -35,12 +35,4 @@ public class ReverseLinkedList {
         return previous;
     }
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }
