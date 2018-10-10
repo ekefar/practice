@@ -8,37 +8,45 @@ import java.util.Scanner;
 public class Fibonacci {
 
     public static void main(String[] args) {
-        System.out.println(fibonacci(20));
-        System.out.println(fibonacciNoRec(20));
-    }
-
-    public static int fibonacci(int n) {
-        // Complete the function.
-        if (n < 2) {
-            return n;
+        for (int i = 0; i <10; i++) {
+            System.out.println(fibonacci(i));
         }
 
-        return fibonacci(n - 2) + fibonacci(n - 1);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+        for (int i = 0; i <10; i++) {
+            System.out.println(fibonacciNoRec(i));
+        }
     }
 
-    public static int fibonacciNoRec(int n) {
 
-        // Complete the function.
-        if (n < 2) {
-            return n;
+    static int fibonacci(int n) {
+        if(n<=1) {
+            return 1;
+        }
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
+
+
+    static int fibonacciNoRec(int n) {
+        if(n<=1) {
+            return 1;
         }
 
-        int prevPrev = 0;
         int prev = 1;
+        int prevPrev = 1;
+        int current = 0;
 
-        int next = 0;
-        for (int i = 2; i <= n; i++) {
-            next = prev + prevPrev;
-            prevPrev = prev;
-            prev = next;
+        for (int i = 0; i < n; i++) {
+             current = prev + prevPrev;
+
+             prevPrev = prev;
+             prev = current;
         }
 
-        return next;
+        return current;
     }
 
 

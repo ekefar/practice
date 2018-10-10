@@ -1,12 +1,14 @@
 package tree;
 
+import java.util.TreeSet;
+
 /**
  * @author : Alexander Serebriyan
  */
 public class SymetricTree {
 
     public static void main(String[] args) {
-
+        TreeSet<Object> objects = new TreeSet<>();
     }
 
     public boolean isSymmetric(TreeNode root) {
