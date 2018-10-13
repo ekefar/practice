@@ -2,6 +2,7 @@ package dynamic;
 
 /**
  * @author : Alexander Serebriyan
+ * https://leetcode.com/problems/longest-increasing-subsequence/description/
  */
 public class LongestIncreasingSubsequence {
 
