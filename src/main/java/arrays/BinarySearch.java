@@ -2,12 +2,12 @@ package arrays;
 
 /**
  * @author : Alexander Serebriyan
- * https://leetcode.com/problems/binary-search/description/
+ *         https://leetcode.com/problems/binary-search/description/
  */
 public class BinarySearch {
 
     public static void main(String[] args) {
-        System.out.println(search(new int[] {-1,0,3,5,9,12}, 11));
+        System.out.println(search(new int[]{-1, 0, 3, 5, 9, 12}, 11));
     }
 
     public static int search(int[] nums, int target) {
@@ -16,19 +16,16 @@ public class BinarySearch {
         int right = nums.length - 1;
 
         while (left <= right) {
+            int mid = left + (right - left) / 2;
 
-            int middle = left + (right - left) / 2;
-
-            if (nums[middle] > target) {
-                right = middle - 1;
-            } else if(nums[middle] < target) {
-                left = middle + 1;
+            if (nums[mid] > target) {
+                right = mid - 1;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
             } else {
-                return middle;
+                return mid;
             }
-
         }
-
         return -1;
 
     }

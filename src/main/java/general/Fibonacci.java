@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Fibonacci {
 
     public static void main(String[] args) {
-        for (int i = 0; i <10; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(fibonacci(i));
         }
 
@@ -16,22 +16,22 @@ public class Fibonacci {
         System.out.println();
         System.out.println();
 
-        for (int i = 0; i <10; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(fibonacciNoRec(i));
         }
     }
 
 
     static int fibonacci(int n) {
-        if(n<=1) {
+        if (n <= 1) {
             return 1;
         }
-        return fibonacci(n-1) + fibonacci(n-2);
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
 
     static int fibonacciNoRec(int n) {
-        if(n<=1) {
+        if (n <= 1) {
             return 1;
         }
 
@@ -40,10 +40,10 @@ public class Fibonacci {
         int current = 0;
 
         for (int i = 0; i < n; i++) {
-             current = prev + prevPrev;
+            current = prev + prevPrev;
 
-             prevPrev = prev;
-             prev = current;
+            prevPrev = prev;
+            prev = current;
         }
 
         return current;
