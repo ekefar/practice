@@ -6,7 +6,8 @@ package dynamic;
 public class LongestIncreasingSubsequence {
 
     public static void main(String[] args) {
-        System.out.println(lengthOfLIS(new int[]{10,22,9,33,21,50,41,60, 80}));
+        System.out.println(lengthOfLIS(new int[]{10,22,99,1,2,3,4,5, 6}));
+        System.out.println(lengthOfLIS(new int[]{10,9,2,5,3,7,101,18}));
     }
 
     public static int lengthOfLIS(int[] nums) {
